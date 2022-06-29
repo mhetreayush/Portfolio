@@ -40,17 +40,20 @@ function toggleMe() {
 }
 themeToggleBtn.addEventListener('click', toggleMe);
 
-let projectCard = `
-<div class="p-4 max-w-sm bg-white rounded-lg border shadow-md sm:p-8 xs:p-8 dark:bg-gray-800 dark:border-gray-700">
-     <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 text-center">ID Touch</h5>
-        <div class="flex flex-col gap-4 items-baseline text-gray-900 dark:text-white">
-            <img class="rounded border-4 border-black border-spacing-2 dark:border-white" src="images/idTouch.png" alt="">
-            <button type="button" class="text-white bg-blue-600 hover:bg-blue-700 font-bold rounded-lg text-base px-5 py-2.5 inline-flex justify-center w-full text-center"><a href="https://devpost.com/software/bunty" target="_blank">Learn More</a></button>
-        </div>
-</div>
-`
+function createProjCard(projName, logo, link){
+    let projectCard = `
+    <div class="p-4 my-10 max-w-sm flex flex-col justify-between bg-white rounded-lg text-gray-900 dark:text-white border shadow-md sm:p-8 xs:p-8 dark:bg-gray-800 dark:border-gray-700">
+         <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400 text-center">${projName}</h5>
+                <img src="images/${logo}" alt="">
+                <button type="button" class="my-6 text-white bg-blue-600 hover:bg-blue-700 font-bold rounded-lg text-base px-5 py-2.5 inline-flex justify-center w-full text-center"><a href="${link}" target="_blank">Learn More</a></button>
+    </div>
+    `
+    document.getElementById("projectCardHolder").innerHTML+=projectCard
+}
 
-document.getElementById("projectCardHolder").innerHTML = projectCard;
+createProjCard("IdTouch", "idTouch.png", "https://devpost.com/software/bunty")
+createProjCard("AirBnb Clone", "airbnb.png", "https://mhetreayush.github.io/airbnbClone/")
+
 window.addEventListener('keydown', (e) => {
     if (e.keyCode === 32 && e.target === document.body) {
         e.preventDefault();

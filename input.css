@@ -40,3 +40,8 @@ figure{
         opacity: 0;
     }
 }
+
+#projectCardHolder img{
+    width: 200px;
+    height: 200px;
+}
