@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities; 
 
-#main{
-    animation: showMain 1.5s linear forwards;
-}
-
-@keyframes showMain{
-    0%{
-        filter:blur(10px);
-    }
-    100%{
-        filter:blur(0);
-    }
-}
-
 #footer img{
     width: 2.5rem;
 }
