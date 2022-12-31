@@ -8,7 +8,11 @@ const Mainwrapper = ({ children, reverse, heading, animationData }) => {
           <h1 className="text-lg font-semibold text-center py-4">{heading}</h1>
         </div>
         <div className={`flex  ${reverse && "flex-row-reverse"}`}>
-          <div className="w-1/2 flex items-center justify-center h-full">
+          <div
+            className={`w-1/2 flex items-center ${
+              reverse ? "justify-end" : "justify-start"
+            } h-full`}
+          >
             <Lottie
               play
               onScroll={true}
@@ -18,7 +22,7 @@ const Mainwrapper = ({ children, reverse, heading, animationData }) => {
               }}
             />
           </div>
-          <div className="w-1/2">{children}</div>
+          <div className={`w-1/2 ${!reverse && "text-right"}`}>{children}</div>
         </div>
       </div>
     </div>
