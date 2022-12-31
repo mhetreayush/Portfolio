@@ -11,6 +11,7 @@ const Mainwrapper = ({ children, reverse, heading, animationData }) => {
           <div className="w-1/2 flex items-center justify-center h-full">
             <Lottie
               play
+              onScroll={true}
               animationData={animationData}
               style={{
                 width: "75%",
